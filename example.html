@@ -16,7 +16,8 @@
     <script type="text/javascript" charset="utf-8">
     $(function(){
         
-        $('.duplicate-wrap').duplicator({
+        $('#duplicate-container').duplicator({
+            rowSelector    : '.duplicate-wrap:eq(0)',
             addSelector    : '#add',
             removeSelector : '.remove',
             removeMarkup   : '<a href="#" class="remove">[-]</a>',
@@ -27,12 +28,6 @@
                              }
         });
         
-        $('.duplicate-wrap-2').duplicator({
-            addSelector    : '#add-2',
-            removeSelector : '.remove-2',
-            removeMarkup   : '<a href="#" class="remove-2">[-]</a>'
-        });
-        
     });
         
     </script>
@@ -41,21 +36,18 @@
     <form>
         <h3>Tags</h3>
         <a href="#" class="btn" id="add">[+]</a>
-        <div class="duplicate-wrap">
-            <input type="text" name="tags[]" value="">
-        </div>
-
-        <h3>Categories</h3>
-        <a href="#" class="btn" id="add-2">[+]</a>
-        <div class="duplicate-wrap-2">
-            <select name="categories[]">
-                <option value="cat_1">Category 1</option>
-                <option value="cat_2">Category 2</option>
-                <option value="cat_3">Category 3</option>
-                <option value="cat_4">Category 4</option>
-            </select>
-        </div>
-    
+		<div id="duplicate-container">
+			<div class="duplicate-wrap">
+				TEXT text test
+				<select name="categories[]">
+					<option value="cat_1">Category 1</option>
+					<option value="cat_2">Category 2</option>
+					<option value="cat_3">Category 3</option>
+					<option value="cat_4">Category 4</option>
+				</select>
+				<input type="text" name="tags[]" value="">
+			</div>
+		</div>
     </form>
 </body>
 </html>
